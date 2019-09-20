@@ -17,6 +17,6 @@ echo "Second setuid file list:"
 echo "============="
 find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 3
 echo ""
-echo "Finding largest file in order of largest to smallest. File size listed prior to the date"
+echo "Finding the 10 largest files in list, ordered largest to smallest of first 10. File size listed prior to the date"
 echo "============="
-find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -r -n -k7
+find / -type f -executable -ls 2>/dev/null | sort -r -n -k7 | head -10
